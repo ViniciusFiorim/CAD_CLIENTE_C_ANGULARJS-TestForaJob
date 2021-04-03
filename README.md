@@ -11,4 +11,4 @@ Projeto criado para processo seletivo em empresa de desenvolvimento de software.
 * AngularJs 1.7.8
 * Bootstrap 3
 
-## Embasado no tutorial do canal [Glaucia Lemos](https://www.youtube.com/user/l32759) do Youtube
+> Embasado no tutorial do canal [Glaucia Lemos](https://www.youtube.com/user/l32759) do Youtube <
