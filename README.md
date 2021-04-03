@@ -14,4 +14,4 @@ Projeto criado para processo seletivo em empresa de desenvolvimento de software.
 > Embasado no tutorial do canal [Glaucia Lemos](https://www.youtube.com/user/l32759) do Youtube 
 
 > Aplicação criada em MVS com tecnologia ADO.NET, C# e AngularJs.
-Suporte da desenvolvedora [Glaucia Lemos](https://www.linkedin.com/in/glaucialemos/), a qual agradeço pela tutoria e orientação, fornecida no desenvolvimento da minha versão da aplicação a qual fundamente no seu tutorial [CRUD MVC 5 + EF + AngularJs](https://www.youtube.com/playlist?list=PLb2HQ45KP0Wup_FBqaq6Bvf2pfGFlmhg5).
+Suporte da Cloud Advocate [Glaucia Lemos](https://www.linkedin.com/in/glaucialemos/), a qual agradeço pela tutoria e orientação, fornecida no desenvolvimento da minha versão da aplicação a qual fundamente no seu tutorial [CRUD MVC 5 + EF + AngularJs](https://www.youtube.com/playlist?list=PLb2HQ45KP0Wup_FBqaq6Bvf2pfGFlmhg5).
