@@ -12,3 +12,6 @@ Projeto criado para processo seletivo em empresa de desenvolvimento de software.
 * Bootstrap 3
 
 > Embasado no tutorial do canal [Glaucia Lemos](https://www.youtube.com/user/l32759) do Youtube 
+
+> Aplicação criada em MVS com tecnologia ADO.NET, C# e AngularJs.
+Suporte da desenvolvedora [Glaucia Lemos](https://www.linkedin.com/in/glaucialemos/), a qual agradeço pela tutoria e orientação, fornecida no desenvolvimento da minha versão da aplicação.
