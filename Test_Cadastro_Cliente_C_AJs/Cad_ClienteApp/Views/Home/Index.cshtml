@@ -1,0 +1,168 @@
+﻿<div class="container" ng-controller="clienteCtrl">
+
+    <div class="panel-heading">
+        <table class="table table-bordered">
+            <thead style="background-color:cadetblue">
+                <tr>
+                    <th>
+                        <h3 class="text-center">- Vinicius Fiorim da Silva - Analista e Desenvolvedor de Sistemas - 04/2021 -</h3>
+                        <h4 class="text-center "> - Cadastro de Clientes - Test CRUD - </h4>
+                    </th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+
+    @* S.Div - Panel Info *@
+    <div class="panel panel-info">
+        <div class="panel-body">
+            <button type="button" class="btn btn-success" data-target="#AddCliente" data-toggle="modal">
+                <b>Cadastrar</b>
+            </button>
+        </div>
+
+        <table class="table table-bordered">
+            <thead style="background-color: cadetblue;">
+                <tr>
+                    <th>Codígo</th>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>Endereço</th>
+                    <th>Telefone</th>
+                    <th>Observação</th>
+                    <th>Opções</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr ng-repeat="func in Clientes">
+                    <td>{{func.ClienteId}}</td>
+                    <td>{{func.Nome}}</td>
+                    <td>{{func.CPF}}</td>
+                    <td>{{func.Endereco}}</td>
+                    <td>{{func.Telefone}}</td>
+                    <td>{{func.Observacao}}</td>
+                    <td style="width: 200px">
+                        <a href="#" data-target="#UpdCliente" data-toggle="modal" class="btn btn-info" ng-click="UpdClientePorCd(func)">Atualizar</a>
+                        <a href="#" data-target="#DelCliente" data-toggle="modal" class="btn btn-danger" ng-click="DelClienteCd(func)">Excluir</a>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+
+        @* S.Modal de Adição de cliente *@
+
+        <div class="modal" id="AddCliente" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="text-info"> Adicionar Cliente </h3>
+                    </div>
+                    <div class="modal-body" style="margin-left: 20px">
+                        <form class="form-horizontal" name="AddNewClienteForm">
+                            <div class="form-group">
+                                <input class="form-control" readonly="readonly" name="clienteId" type="hidden" placeholder="Codígo do Cliente" />
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="nome" ng-model="nome" placeholder="Nome" />
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="cpf" ng-model="cpf" placeholder="CPF" />
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="endereco" ng-model="endereco" placeholder="Endereço" />
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="telefone" ng-model="telefone" placeholder="Telefone" />
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="observacao" ng-model="observacao" placeholder="Observações" />
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="btnSalvar" data-dismiss="modal" ng-click="addCliente()"> Adicionar </button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="limparDados()"> Fechar </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @* E.Modal de Adição de cliente *@
+
+        @* S.Modal de Atualização do cliente *@
+
+        <div class="modal" id="UpdCliente" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="text-warning"> Atualizar Cliente </h3>
+                    </div>
+                    <div class="modal-body" style="margin-left: 20px">
+                        <form class="form-horizontal" name="UpdForm">
+                            <div class="form-group">
+                                <input class="form-control" readonly="readonly" name="ClienteId" ng-model="UpdClienteId" type="hidden" placeholder="Codigo Cliente" />
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" name="nome" ng-model="UpdNome" placeholder="Nome Cliente" />
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" name="cpf" ng-model="UpdCPF" placeholder="CPF Cliente" />
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" name="endereco" ng-model="UpdEndereco" placeholder="Endereço Cliente" />
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" name="telefone" ng-model="UpdTelefone" placeholder="Telefone Cliente" />
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" name="observacao" ng-model="UpdObservacao" placeholder="Observação Cliente" />
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="btnAtualizar" data-dismiss="modal" ng-click="UpdCliente()"> Atualizar </button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal"> Fechar </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @* E.Modal de Atualização do cliente *@
+
+        @* S.Modal de Deleção do cliente *@
+
+        <div class="modal" role="dialog" id="DelCliente">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="text-info">Confirma a remoção do cadastro do cliente?</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <p>Codigo do Cliente: {{UpdClienteId}}</p>
+                            <p>Nome do CLiente: {{UpdNome}}</p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="DelCliente(UpdClientePorCd)">Remover</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @* E.Modal de Deleção do cliente *@
+
+    </div>
+    @* E.Div - Panel Info *@
+
+</div>
+
+@section scripts {
+    <script src="~/AngularjsApp/Cliente/Module.js"></script>
+    <script src="~/AngularjsApp/Cliente/Service.js"></script>
+    <script src="~/AngularjsApp/Cliente/Controller.js"></script>
+}
